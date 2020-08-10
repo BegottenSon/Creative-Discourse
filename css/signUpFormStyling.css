@@ -1,0 +1,56 @@
+#closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #747272;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+#mc_embed_signup_scroll div {
+    padding: 1em;
+}
+
+#formParagraph {
+    width: auto;
+    max-width: 60ch;
+    padding: 2em 6.5em;
+}
+
+@media (max-width: 800px) {
+    #formParagraph {
+        padding: 1em;
+        font-size: 0.8em;
+    }
+
+    .indicates-required {
+        font-size: 0.4em;
+    }
+}
+
+/* =======================================
+Styling for the header 2 at the top of form
+========================================== */
+#mc-embedded-subscribe-form h2 {
+    padding-top: 2em;
+}
+
+.indicates-required {
+    font-size: 0.7em;
+}
+
+/* =======================================
+Styling for the subscribe button
+========================================== */
+#mc-embedded-subscribe {
+    background-color: var(--begotten-red);
+    color: var(--begotten-white);
+    border: 1px solid var(--begotten-white);
+    border-radius: 8px;
+    padding: 1em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

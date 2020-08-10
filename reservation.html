@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Discourse Reservation</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/reservation.css"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <header class="sr-header">
+          <div class="sr-header__logo">
+            <svg id="svgIcon" width="255px" height="100%" viewBox="0 0 727 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+              <a xlink:href="index.html">
+              <g id="Begotten-Icon" serif:id="Begotten Icon" transform="matrix(0.528187,0,-3.39422e-32,0.528187,-3825.59,-6306.54)">
+                  <path id= "icon" d="M8504.32,13303.1L7356.31,13303.1C7328.62,13303.1 7302.9,13288.8 7288.31,13265.3C7277.8,13248.3 7265.43,13228.4 7254.91,13211.4C7240.26,13187.7 7238.93,13158.2 7251.39,13133.4C7392.8,12851.4 7675.57,12287.5 7827.74,11984.1C7841.31,11957 7868.99,11940 7899.25,11940C7918.98,11940 7941.65,11940 7961.38,11940C7991.65,11940 8019.32,11957 8032.89,11984.1C8185.07,12287.5 8467.84,12851.4 8609.24,13133.4C8621.7,13158.2 8620.37,13187.7 8605.73,13211.4C8595.2,13228.4 8582.83,13248.3 8572.32,13265.3C8557.73,13288.8 8532.01,13303.1 8504.32,13303.1ZM8459.01,13228.4C8479.82,13228.4 8499.14,13217.7 8510.07,13200C8515.99,13190.4 8522.61,13179.6 8528.53,13170C8539.46,13152.3 8540.44,13130.2 8531.11,13111.6C8472.39,12994.5 8383.28,12816.8 8330.03,12710.7C8321.55,12693.8 8304.25,12683.1 8285.33,12683.1C8266.42,12683.1 8249.12,12693.8 8240.64,12710.7C8156.06,12879.3 7980.97,13228.4 7980.97,13228.4L8459.01,13228.4ZM7936.28,12103.8C7944.76,12086.9 7962.06,12076.2 7980.97,12076.2C7999.89,12076.2 8017.19,12086.9 8025.67,12103.8C8081.31,12214.7 8176.13,12403.8 8234.49,12520.2C8245.38,12541.9 8244.24,12567.6 8231.49,12588.3C8218.74,12609 8196.2,12621.5 8171.92,12621.5C7995.81,12621.5 7676.61,12621.5 7676.61,12621.5C7676.61,12621.5 7851.7,12272.4 7936.28,12103.8Z" 
+                  />
+              </g>
+              </a>
+              <defs>
+                  <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="0" 
+                  gradientUnits="userSpaceOnUse" gradientTransform="matrix(877.68,-545.366,545.366,877.68,7272.75,13228.4)">
+                      <stop offset="0" style="stop-color:rgb(206,0,53);stop-opacity:1"/>
+                      <stop offset="1" style="stop-color:rgb(233,27,80);stop-opacity:1"/>
+                  </linearGradient>
+              </defs>
+          </svg>
+          </div>
+        </header>
+        <p id="reserveText">
+          Creative Discourse is an event where Creatives – artists, producers, instrumentalists –
+          come together in one studio to make music. The energy in the room being high and 
+          the creative jucies flowing brings songs into existence that otherwise wouldn't have spawned.
+        </p>
+        <section class="container">
+          <div>
+            <h1>Creative Discourse Reservation</h1>
+            <h4>Reserve Your Spot For The Studio Session <br>
+              Friday, Aug. 28th <br>
+              11am - 3pm</h4>
+            <div class="cd-image">
+              <img
+                src="/images/Creative Discourse.jpg"
+                width="140"
+                height="140"
+              />
+            </div>
+          </div>
+          <div class="quantity-setter">
+            <button class="increment-btn" id="subtract" disabled>
+              -
+            </button>
+            <input type="number" id="quantity-input" min="1" value="1" />
+            <button class="increment-btn" id="add">
+              +
+            </button>
+          </div>
+          <p class="sr-legal-text">Number of Reservations (max 8)</p>
+
+          <button class="button" id="buyButton">
+            Buy for $<span id="total">30</span>.00
+          </button>
+        </section>
+        <div id="error-message">
+          <p>
+            Uh Ohh! Reservations going like hotcakes. All spots may have been 
+            reserved or another error has occured.
+          </p>
+        </div>
+        <h3 id="alternatePay"> Or pay by Cash App: </h3>
+        <svg id="cashApp" xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 64 64">
+          <g>
+            <a xlink:href="https://cash.app/$BegottenSon" target="_blank" rel="noreferrer noopener">
+            <path d="M41.7 0c6.4 0 9.6 0 13.1 1.1a13.6 13.6 0 0 1 8.1 8.1C64 12.7 64 15.9 64 
+            22.31v19.37c0 6.42 0 9.64-1.1 13.1a13.6 13.6 0 0 1-8.1 8.1C51.3 64 48.1 64 41.7 
+            64H22.3c-6.42 0-9.64 0-13.1-1.1a13.6 13.6 0 0 1-8.1-8.1C0 51.3 0 48.1 0 
+            41.69V22.3c0-6.42 0-9.64 1.1-13.1a13.6 13.6 0 0 1 8.1-8.1C12.7 0 15.9 0 22.3 0h19.4z" 
+            fill="#00D632"/>
+            <path d="M42.47 23.8c.5.5 1.33.5 1.8-.0l2.5-2.6c.53-.5.5-1.4-.06-1.94a19.73 
+            19.73 0 0 0-6.72-3.84l.79-3.8c.17-.83-.45-1.61-1.28-1.61h-4.84a1.32 1.32 0 0 
+            0-1.28 1.06l-.7 3.38c-6.44.33-11.9 3.6-11.9 10.3 0 5.8 4.51 8.29 9.28 10 4.51 
+            1.72 6.9 2.36 6.9 4.78 0 2.49-2.38 3.95-5.9 3.95-3.2 0-6.56-1.07-9.16-3.68a1.3 1.3 0 0 
+            0-1.84-.0l-2.7 2.7a1.36 1.36 0 0 0 .0 1.92c2.1 2.07 4.76 3.57 7.792 4.4l-.74 
+            3.57c-.17.83.44 1.6 1.27 1.61l4.85.04a1.32 1.32 0 0 0 1.3-1.06l.7-3.39C40.28 49.07 45 
+            44.8 45 38.57c0-5.74-4.7-8.16-10.4-10.13-3.26-1.21-6.08-2.04-6.08-4.53 0-2.42 2.63-3.38 
+            5.27-3.38 3.36 0 6.59 1.39 8.7 3.29z" />
+            </a>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script src="/scripts/payment.js"></script>
+  </body>
+</html>
