@@ -1,19 +1,19 @@
 var PUBLISHABLE_KEY = "pk_live_4R3JOqXyoZRkzPv5tIcr8XEr";
 var DOMAIN = new URL('https://begotten.live');
 var PRICE_ID = "price_1HCF4E4KI0G6StnQkk5tWHAZ";
-var MIN_PHOTOS = 1;
-var MAX_PHOTOS = 8;
+var MinRESERVATION = 1;
+var MaxRESERVATION = 8;
 var stripe = Stripe(PUBLISHABLE_KEY);
 var buyButton = document.getElementById("buyButton");
 
 document
   .getElementById("quantity-input")
   .addEventListener("change", function(evt) {
-    if (evt.target.value < MIN_PHOTOS) {
-      evt.target.value = MIN_PHOTOS;
+    if (evt.target.value < MinRESERVATION) {
+      evt.target.value = MinRESERVATION;
     }
-    if (evt.target.value > MAX_PHOTOS) {
-      evt.target.value = MAX_PHOTOS;
+    if (evt.target.value > MaxRESERVATION) {
+      evt.target.value = MaxRESERVATION;
     }
   });
 
@@ -35,10 +35,10 @@ var updateQuantity = function(evt) {
   document.getElementById("total").textContent = quantity * 30;
 
   // Disable the button if the customers hits the max or min
-  if (quantity === MIN_PHOTOS) {
+  if (quantity === MinRESERVATION) {
     document.getElementById("subtract").disabled = true;
   }
-  if (quantity === MAX_PHOTOS) {
+  if (quantity === MaxRESERVATION) {
     document.getElementById("add").disabled = true;
   }
 };
