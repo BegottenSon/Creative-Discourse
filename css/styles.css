@@ -7,6 +7,7 @@
     --begotten-dark: #1a1a1a;
     --lighter-red: #e07b95;
     --begotten-gradient: linear-gradient(to top right, #cf0036, #e91b50);
+    --link-hover: #ecacbc;
     margin: 0;
 }
 
@@ -23,6 +24,18 @@ h2, h3, h4, p {
     color: var(--begotten-white);
     font-family: Helvetica, sans-serif;
 }
+a {
+    text-decoration: none;
+    color: var(--lighter-red);
+}
+a:hover {
+    color: var(--link-hover);
+}
+
+::selection {
+    background-color: #6b1027;
+}
+
 .blurOn {
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
@@ -31,10 +44,39 @@ h2, h3, h4, p {
     filter: blur(2px);
 }
 
+/* ===============================
+NAV BAR STYLING 
+================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+}
+
+#svgNav {
+    margin: 0.4em;
+    fill: url(#iconGrad);
+    width: 50px;
+}
+
+.navLink {
+    font-family: 'Montserrat','Futura';
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--begotten-red);
+    align-self: center;
+}
+
+.navLink:hover, .navLink:active {
+    color: var(--link-hover);
+}
+
+
 .wrapper {
     display: grid;
     grid-template-columns: 0.5fr max-content max-content 0.5fr max-content 0.5fr;
-    /* grid-template-rows: repeat(6, 1fr); */
     grid-template-rows: max-content 2fr 1fr 1fr 1fr 1fr;
 }
 
@@ -42,12 +84,8 @@ h2, h3, h4, p {
     grid-row: 1;
     grid-column: 1;
     margin: 0.4em;
-   /* position: absolute; */
-   /* top: -325px; */
-   /* left: 10px; */
    fill: url(#iconGrad);
-   width: 50px;
-   
+   width: 50px; 
 }
 
 #title {
@@ -151,42 +189,6 @@ button a {
     animation: blinker 5s linear 2s infinite;
 }
 
-.modal {
-    position: absolute;
-    top: 100px;
-    left: 15%;
-    color: var(--begotten-white);
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--begotten-grey);
-    text-align: center;
-    width: 70vw;
-    border-radius: 20px;
-    transform: scale(0.10);
-    opacity: 0.10;
-    transition: 0.4s ease;
-    visibility: hidden;
-    user-select: none;
-
-}
-
-.modalOn {
-    position: absolute;
-    top: 100px;
-    left: 15vw;
-    visibility: visible;
-    color: var(--begotten-white);
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--begotten-grey);
-    text-align: center;
-    width: 70vw;
-    border-radius: 20px;
-    transform: scale(1);
-    opacity: 1;
-    transition: 0.4s ease;
-    z-index: 20;
-}
-
-
 /* ===================================
 The C and D Animation
 ====================================== */
@@ -242,12 +244,6 @@ media queary at 800px
         flex-direction: column;
         justify-items: center;
         place-items: center;
-    }
-
-    #svgIcon{
-        width: 30px;
-        top: -335px;
-        left: 2px;
     }
 
     #title, #piano, #tagline {
