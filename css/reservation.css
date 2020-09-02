@@ -10,6 +10,7 @@
     width: 45vw;
     align-self: center;
     text-align: center;
+    line-height: 1.5em;
 }
 
 .container {
@@ -27,6 +28,10 @@
 .container div h1, .container div h4, .cd-image, .sr-legal-text, #reserveText, #buyButton {
     margin-top: 0.7em;
     margin-bottom: 1em;
+}
+
+.reserveInfo {
+    line-height: 1.5em;
 }
 
 .sr-legal-text {

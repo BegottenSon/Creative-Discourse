@@ -1,0 +1,170 @@
+* {
+    position: relative;
+}
+
+/* ===============================
+STYLING FOR THE BLOG POST PAGES
+================================== */
+
+.blogPostWrap {
+    max-width: 55rem;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* padding-left: calc(1rem + (8 - 1) * ((100vw - 20rem)/ (100 - 20))); */
+    padding-inline: calc(100vw - 65rem);
+}
+
+.blogPostHeader {
+    display: flex;
+    margin: 1.5em 0;
+}
+
+.blogPostInfo {
+    align-self: center;
+    margin: 0 1%;
+    padding: 2em;
+    box-shadow: 0.5em 0.3em var(--begotten-white);
+    border-radius: 8px;
+}
+
+.blogPostInfo > * {
+    margin-bottom: 0.5em;
+}
+
+.blogPostLinks {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.blogPostHeadline {
+    font-size: 3em;
+    text-align: center;
+    max-width: 60vw;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    padding: 1em;
+    border: var(--begotten-white) 2px solid;
+    border-radius: 8px;
+    box-shadow: 0.5em 0.3em var(--begotten-white);
+}
+.blogPara {
+    font-size: 1.2em;
+    line-height: 1.7em;
+    margin-bottom: 2em;
+}
+
+/* ===============================
+STYLING FOR THE BLOG OVERVIEW PAGE
+================================== */
+.flexContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.blogCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0.8em;
+    width: 40ch;
+    padding-left: 1%;
+    margin-top: 2em;
+}
+
+.profilePic {
+    clip-path: url(#profilePicClip);
+    width: 200px;
+    z-index: 1;
+}
+
+.profilePicBackground::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 24% 0;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 194 194' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cpath d='M90.0298 7.3815c1.875-1.876 4.418-2.929 7.071-2.929 2.652 0 5.195 1.053 7.071 2.929 17.824 17.824 64.436 64.436 82.26 82.259 1.875 1.876 2.928 4.419 2.928 7.072 0 2.652-1.053 5.195-2.928 7.071-17.824 17.824-64.436 64.436-82.26 82.259-1.876 1.876-4.419 2.929-7.071 2.929-2.653 0-5.196-1.053-7.071-2.929-17.824-17.823-64.436-64.435-82.26-82.259-1.876-1.876-2.929-4.419-2.929-7.071 0-2.653 1.053-5.196 2.929-7.072 17.824-17.823 64.436-64.435 82.26-82.259z' fill='%23ebebeb'/%3E%3C/svg%3E");
+}
+
+.blogHeadline {
+    color: var(--begotten-red);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.8em;
+}
+
+.headlineLink {
+    color: var(--begotten-red);
+}
+
+.blogPreview {
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+    line-clamp: 3;
+}
+
+.blogLinkFooter {
+    align-self: flex-end;
+}
+
+.blogLink {
+    padding-right: 2.6em;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.blogLink:hover, .blogLink:active {
+    color: var(--link-hover);
+}
+
+.blogArrow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2rem;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 31 8' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cpath d='M7.00075 4.8041l-2.862 2.863-3.817-3.817 3.817-3.816 2.862 2.862h16.841l-.621-2.862 7.633 3.816-7.633 3.817.621-2.863h-16.841z' fill='%23e91b50'/%3E%3C/svg%3E");
+    transition: ease-out 0.4s;
+}
+
+.blogArrow:hover::after {
+    transform: translateX(10px);
+}
+
+/* =====================================
+STYLING FOR MOBLIE
+======================================== */
+@media (max-width: 500px) {
+
+    .header {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+  
+    #profilePicClip {
+        width: 20%;
+        height: 20%;
+    }
+    .blogPostInfo {
+        font-size: 0.6em;
+    }
+
+    .blogPostHeadline {
+        font-size: 2.2em;
+    }
+}
+
+/* ===================================== 
+CLEARING SVG THAT IS USED FOR CLIP PATHS
+======================================== */
+.svgClip {
+    position: absolute;
+    height: 0;
+    width: 0;
+}
