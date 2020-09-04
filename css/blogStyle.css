@@ -58,6 +58,7 @@ STYLING FOR THE BLOG OVERVIEW PAGE
 ================================== */
 .flexContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -66,6 +67,7 @@ STYLING FOR THE BLOG OVERVIEW PAGE
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
+    justify-content: space-between;
     gap: 0.8em;
     width: 40ch;
     padding-left: 1%;
@@ -104,6 +106,7 @@ STYLING FOR THE BLOG OVERVIEW PAGE
     text-overflow: ellipsis;
     line-height: 1.2em;
     line-clamp: 3;
+    padding-bottom: 2rem;
 }
 
 .blogLinkFooter {
