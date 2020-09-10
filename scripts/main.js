@@ -12,7 +12,7 @@ const piano = [
 ];
 
 function playSong() {
-    const keyPressed = event.srcElement.id;
+    const keyPressed = event.target.id;
     const songFound = piano.find(song => song.key === keyPressed);
     const song = songFound.audio;
     function pauseSong() {
