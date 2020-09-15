@@ -28,7 +28,7 @@ window.addEventListener("play", function(evt) {
 }, true);
 
 // SETTING TIMER
-let countDownDate = new Date("Oct 2, 2020 11:00:00").getTime();
+let countDownDate = new Date("Oct 9, 2020 11:00:00").getTime();
 
 let x = setInterval(function() {
 
