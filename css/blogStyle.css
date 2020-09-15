@@ -53,6 +53,10 @@ STYLING FOR THE BLOG POST PAGES
     margin-bottom: 2em;
 }
 
+.endBlog {
+    margin: 4em 0;
+    text-align: end;
+}
 /* ===============================
 STYLING FOR THE BLOG OVERVIEW PAGE
 ================================== */

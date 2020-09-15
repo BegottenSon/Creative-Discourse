@@ -6,6 +6,7 @@
 }
 
 #reserveText {
+    font-size: 1.1em;
     max-width: 65ch;
     width: 45vw;
     align-self: center;
