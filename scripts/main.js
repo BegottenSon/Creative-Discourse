@@ -28,7 +28,7 @@ window.addEventListener("play", function(evt) {
 }, true);
 
 // SETTING TIMER
-let countDownDate = new Date("Oct 9, 2020 11:00:00").getTime();
+let countDownDate = new Date("Nov 21, 2020 11:00:00").getTime();
 
 let x = setInterval(function() {
 
@@ -41,12 +41,12 @@ let x = setInterval(function() {
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  document.getElementById("countdown").textContent = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "MISSED THE EVENT";
-    document.getElementById("countdownEnd").innerHTML = "Check Back For The Next Event";
+    document.getElementById("countdown").textContent = "MISSED THE EVENT";
+    document.getElementById("countdownEnd").textContent = "Check Back For The Next Event";
   }
 }, 1000);

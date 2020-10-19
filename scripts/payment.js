@@ -1,6 +1,6 @@
 var PUBLISHABLE_KEY = "pk_live_4R3JOqXyoZRkzPv5tIcr8XEr";
 var DOMAIN = new URL('https://begotten.live');
-var PRICE_ID = "price_1HCF4E4KI0G6StnQkk5tWHAZ";
+var PRICE_ID = "price_1He6Pa4KI0G6StnQzyvZKoaG";
 var MinRESERVATION = 1;
 var MaxRESERVATION = 8;
 var stripe = Stripe(PUBLISHABLE_KEY);
@@ -32,7 +32,7 @@ var updateQuantity = function(evt) {
   var quantity = isAdding ? currentQuantity + 1 : currentQuantity - 1;
 
   inputEl.value = quantity;
-  document.getElementById("total").textContent = quantity * 30;
+  document.getElementById("total").textContent = quantity * 40;
 
   // Disable the button if the customers hits the max or min
   if (quantity === MinRESERVATION) {
