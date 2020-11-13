@@ -27,6 +27,19 @@ window.addEventListener("play", function(evt) {
     { window.$_currentlyPlaying.pause(); } window.$_currentlyPlaying = evt.target; 
 }, true);
 
+// HIGHLIGHTING KEYS ON LOAD
+let keys = Array.from(document.getElementsByTagName("rect"));
+
+function highlightPiano() {
+  let time = 100
+  for (let k = 0; k < keys.length; k++) {
+    const key = keys[k];
+    key.style.animationDelay = `${time}ms`;
+    time += 40
+  }
+}
+window.addEventListener('load', highlightPiano);
+
 // SETTING TIMER
 let countDownDate = new Date("Nov 21, 2020 11:00:00").getTime();
 

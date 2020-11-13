@@ -247,6 +247,20 @@ g >rect:hover {
 g > rect:active {
 fill: var(--begotten-red);
 }
+
+rect {
+    animation-name: high;
+    animation-duration: 1.5s ;
+}
+
+@keyframes high {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        fill: var(--lighter-red);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        fill: var(--begotten-white);
+    }
+}
 /* =====================================
 media queary at 800px
 ======================================== */
