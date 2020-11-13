@@ -32,10 +32,11 @@ let keys = Array.from(document.getElementsByTagName("rect"));
 
 function highlightPiano() {
   let time = 100
-  for (let k = 0; k < keys.length; k++) {
+  for (let k = 0; k < 7; k++) {
     const key = keys[k];
+    key.style.animationName = "strobe"
     key.style.animationDelay = `${time}ms`;
-    time += 40
+    time += 80
   }
 }
 window.addEventListener('load', highlightPiano);
