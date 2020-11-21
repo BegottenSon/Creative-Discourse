@@ -33,6 +33,7 @@ let keys = Array.from(document.getElementsByTagName("rect"));
 function highlightPiano() {
   let time = 100
   for (let k = 0; k < 7; k++) {
+    // 7 IS THE NUMBER OF WHITE KEYS EXCLUDING OUT BLACK KEYS
     const key = keys[k];
     key.style.animationName = "strobe"
     key.style.animationDelay = `${time}ms`;
@@ -42,7 +43,8 @@ function highlightPiano() {
 window.addEventListener('load', highlightPiano);
 
 // SETTING TIMER
-let countDownDate = new Date("Nov 21, 2020 11:00:00").getTime();
+let countDownDate = new Date("Nov 2, 2020 11:00:00").getTime();
+const countDownSection = document.getElementById("countdown");
 
 let x = setInterval(function() {
 
@@ -55,12 +57,29 @@ let x = setInterval(function() {
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  document.getElementById("countdown").textContent = days + "d " + hours + "h "
+  countDownSection.textContent = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").textContent = "MISSED THE EVENT";
+    countDownSection.textContent = "MISSED THE EVENT";
     document.getElementById("countdownEnd").textContent = "Check Back For The Next Event";
   }
 }, 1000);
+
+//DISABLING BUY BUTTON WHEN COUNTDOWN IS OVER
+let createButton = document.getElementById("checkout-button");
+
+function buttonState() {
+  let checker = setTimeout(function check() {
+    if (countDownSection.textContent === "") {
+      checker = setTimeout(check, 1000);
+    } else if (countDownSection.textContent === "MISSED THE EVENT") {
+      createButton.style.visibility = "hidden";
+    } else {
+      createButton.style.visibility = "visible";
+    }
+  }, 100);
+};
+
+window.addEventListener('load', buttonState);
