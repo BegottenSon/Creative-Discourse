@@ -4,7 +4,7 @@ const dripButton = document.getElementById("drip-button");
 
 
 function showBuySection() {
-    if (window.location.href === "https://begotten.live/reservation.html") {
+    if (window.location.href === "https://begotten.live/reservation") {
         buySection.style.visibility = "hidden";
         dripForm.style.display = "block";
     }else {
