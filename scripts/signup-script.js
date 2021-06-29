@@ -4,12 +4,12 @@ const dripButton = document.getElementById("drip-button");
 
 
 function showBuySection() {
-    if (window.location.href === "http://127.0.0.1:59751/reservation.html#buy-section") {
-        buySection.style.visibility = "visible";
-        dripForm.style.display = "none";
-    }else {
+    if (window.location.href === "https://begotten.live/reservation.html") {
         buySection.style.visibility = "hidden";
-        dripForm.style.display = "block"
+        dripForm.style.display = "block";
+    }else {
+        buySection.style.visibility = "visible";
+        dripForm.style.display = "none"; 
     }
 }
 
