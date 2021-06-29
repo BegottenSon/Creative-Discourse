@@ -1,3 +1,7 @@
+body {
+    color: var(--begotten-white);
+}
+
 .sr-main{
     display: flex;
     flex-direction: column;

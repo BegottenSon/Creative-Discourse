@@ -40,7 +40,7 @@
           <div>
             <h1>Creative Discourse Reservation</h1>
             <h4 class="reserveInfo">Reserve Your Spot For The Studio Session <br>
-              Nov. 21st<br>
+              Jul. 30th<br>
               11am - 3pm</h4>
             <div class="cd-image">
               <img
@@ -50,20 +50,63 @@
               />
             </div>
           </div>
-          <div class="quantity-setter">
-            <button class="increment-btn" id="subtract" disabled>
-              -
-            </button>
-            <input type="number" id="quantity-input" min="1" value="1" />
-            <button class="increment-btn" id="add">
-              +
+          
+          <form action="https://www.getdrip.com/forms/117453377/submissions" method="post" data-drip-embedded-form="117453377" id="drip-ef-117453377">
+            <div data-drip-attribute="description"><strong>Sign Up Below to Let Us Know You're Coming!</strong><br>
+           </div>
+            
+            <div>
+                <label for="drip-first-name">First Name</label><br>
+                <input type="text" id="drip-first-name" name="fields[first_name]" value="" placeholder="First Name">
+            </div>
+          
+            <div>
+                <label for="drip-last-name">Last Name</label><br>
+                <input type="text" id="drip-last-name" name="fields[last_name]" value="" placeholder="Last Name">
+            </div>
+          
+            <div>
+                <label for="drip-email">Email Address</label><br>
+                <input type="email" id="drip-email" name="fields[email]" value="" placeholder="Your Best Email">
+            </div>
+          
+            <div>
+                <label for="drip-pro-skill">Choose Your Skill</label><br>
+                <select name="fields[pro_skill]">
+                  <option disabled="" selected="" value="">Choose Your Skill</option>
+                    <option value="Producer">Producer</option>
+                    <option value="Artist">Artist</option>
+                    <option value="Both">Both</option>
+                </select>
+            </div>
+          
+          
+            <div style="display: none;" aria-hidden="true">
+              <label for="website">Website</label><br>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="">
+            </div>
+              <input type="hidden" name="tags[]" id="tags_" value="creative_discourse" tabindex="-1">
+          
+            <div>
+              <input type="submit" value="Next Step" data-drip-attribute="sign-up-button" id="drip-button">
+            </div>
+          </form>
+          <div id="buy-section">
+            <div class="quantity-setter">
+              <button class="increment-btn" id="subtract" disabled>
+                -
+              </button>
+              <input type="number" id="quantity-input" min="1" value="1" />
+              <button class="increment-btn" id="add">
+                +
+              </button>
+            </div>
+            <p class="sr-legal-text">Number of Reservations (max 10)</p>
+  
+            <button class="button" id="buyButton">
+              Buy for $<span id="total">40</span>.00
             </button>
           </div>
-          <p class="sr-legal-text">Number of Reservations (max 8)</p>
-
-          <button class="button" id="buyButton">
-            Buy for $<span id="total">40</span>.00
-          </button>
         </section>
         <div id="error-message">
           <p>
@@ -71,7 +114,7 @@
             reserved or another error has occured.
           </p>
         </div>
-        <h3 id="alternatePay"> Or pay by Cash App: </h3>
+        <!-- <h3 id="alternatePay"> Or pay by Cash App: </h3>
         <svg id="cashApp" xmlns="http://www.w3.org/2000/svg" class="app-icon" viewBox="0 0 64 64">
           <g>
             <a xlink:href="https://cash.app/$BegottenSon" target="_blank" rel="noreferrer noopener">
@@ -90,9 +133,10 @@
             5.27-3.38 3.36 0 6.59 1.39 8.7 3.29z" fill="#ebebeb"/>
             </a>
           </g>
-        </svg>
+        </svg> -->
       </div>
     </div>
+    <script src="/scripts/signup-script.js"></script>
     <script src="/scripts/payment.js"></script>
   </body>
 </html>

@@ -43,7 +43,7 @@ function highlightPiano() {
 window.addEventListener('load', highlightPiano);
 
 // SETTING TIMER
-let countDownDate = new Date("Nov 2, 2020 11:00:00").getTime();
+let countDownDate = new Date("Jul 30, 2021 11:00:00").getTime();
 const countDownSection = document.getElementById("countdown");
 
 let x = setInterval(function() {

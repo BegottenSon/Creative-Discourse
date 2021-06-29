@@ -2,7 +2,7 @@ var PUBLISHABLE_KEY = "pk_live_4R3JOqXyoZRkzPv5tIcr8XEr";
 var DOMAIN = new URL('https://begotten.live');
 var PRICE_ID = "price_1He6Pa4KI0G6StnQzyvZKoaG";
 var MinRESERVATION = 1;
-var MaxRESERVATION = 8;
+var MaxRESERVATION = 10;
 var stripe = Stripe(PUBLISHABLE_KEY);
 var buyButton = document.getElementById("buyButton");
 
@@ -57,6 +57,7 @@ var handleResult = function(result) {
   }
 };
 
+//Handle Buy Button
 buyButton.addEventListener("click", function() {
   var quantity = parseInt(
     document.getElementById("quantity-input").value
