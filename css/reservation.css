@@ -71,6 +71,21 @@ body {
     transform: scale(0.9);
 }
 
+#drip-button {
+    font-size: 1em;
+    padding: 0.7em;
+    width: max-content;
+    font-weight: 500;
+    color: var(--begotten-white);
+    background-color: var(--begotten-red);
+    background-image: var(--begotten-gradient);
+    border: 1px solid var(--begotten-white);
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: ease 0.1s;
+}
+
 input[type=number] {
     -moz-appearance: textfield;
     appearance: none;
@@ -78,6 +93,27 @@ input[type=number] {
 
 input::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+input[type=text], input[type=email] {
+    border: 1px solid var(--begotten-red);
+    border-radius: 4px;
+    background-color: var(--begotten-grey);
+}
+
+::placeholder {
+    color: var(--begotten-white);
+}
+
+.drip-select {
+    position: relative;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: none;
+    border-color: var(--begotten-red);
+    border-radius: 4px;
+    background-color: var(--begotten-red);
+    color: var(--begotten-white);
 }
 
 #alternatePay {

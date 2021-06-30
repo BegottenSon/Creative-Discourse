@@ -9,6 +9,7 @@ function showBuySection() {
         dripForm.style.display = "block";
     }else {
         buySection.style.visibility = "visible";
+        //change below back to none before committing GIT
         dripForm.style.display = "none"; 
     }
 }
