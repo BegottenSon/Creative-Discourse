@@ -92,6 +92,7 @@ NAV BAR STYLING
     grid-column: 2/4;
     grid-row: 2/4;
     width: 500px;
+    height: 40vh;
 }
 
 #piano {
