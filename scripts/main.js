@@ -83,3 +83,20 @@ function buttonState() {
 };
 
 window.addEventListener('load', buttonState);
+
+//DISPLAY RESERVATIONS LEFT
+let spotsLeft = document.getElementById("counter");
+function spotsState() {
+  let spotUpdate = setTimeout(function update() {
+    if (countDownSection.textContent === "") {
+      spotUpdate = setTimeout(update, 1000);
+    }else if (reservationCounter <= 0){
+      reservationCounter = 0;
+      spotsLeft.textContent = reservationCounter;
+    }else{
+      spotsLeft.textContent = reservationCounter;
+    }
+  }, 1000);
+}
+
+window.addEventListener("load", spotsState)

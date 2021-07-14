@@ -3,6 +3,7 @@ var DOMAIN = new URL('https://begotten.live');
 var PRICE_ID = "price_1He6Pa4KI0G6StnQzyvZKoaG";
 var MinRESERVATION = 1;
 var MaxRESERVATION = 10;
+var reservationCounter = 10;
 var stripe = Stripe(PUBLISHABLE_KEY);
 var buyButton = document.getElementById("buyButton");
 
@@ -49,11 +50,15 @@ Array.from(document.getElementsByClassName("increment-btn")).forEach(
   }
 );
 
-// Handle any errors from Checkout
+// Handle any errors from Checkout and Update Reservation Counter
 var handleResult = function(result) {
   if (result.error) {
     var displayError = document.getElementById("error-message");
     displayError.textContent = result.error.message;
+  }
+  if (result) {
+    reservationCounter -= 1;
+    console.log("Spots Left: " + reservationCounter)
   }
 };
 

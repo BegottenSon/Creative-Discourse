@@ -159,6 +159,10 @@ button a {
     font-size: 0.6em;
     color: var(--begotten-white);
 }
+
+#spotsLeft {
+    color: var(--begotten-red);
+}
 #create {
     grid-column: 1/7;
     grid-row: 5;
