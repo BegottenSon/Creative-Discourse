@@ -150,12 +150,18 @@ button a {
     -webkit-appearance: none;
 }
 
-#reserveTitle {
+.reserve-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 1/7;
     grid-row: 5;
     align-self: center;
     justify-self: center;
     margin-top: 5em;
+}
+
+#reserveTitle {
     font-size: 0.6em;
     color: var(--begotten-white);
 }
@@ -163,6 +169,7 @@ button a {
 #spotsLeft {
     color: var(--begotten-red);
 }
+
 #create {
     grid-column: 1/7;
     grid-row: 5;
@@ -286,8 +293,8 @@ media queary at 800px
         align-self: center;
     }
 
-    #reserveTitle {
-        margin-top: 1em;
+    .reserve-section {
+        margin-block: 1em;
     }
 
     .modalOn {

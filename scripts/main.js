@@ -60,7 +60,7 @@ let x = setInterval(function() {
   countDownSection.textContent = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
-  if (distance < 0) {
+  if (distance < 0 || reservationCounter <= 0) {
     clearInterval(x);
     countDownSection.textContent = "MISSED THE EVENT";
     document.getElementById("countdownEnd").textContent = "Check Back For The Next Event";
