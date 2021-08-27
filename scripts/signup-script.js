@@ -1,17 +1,20 @@
 const buySection = document.getElementById("buy-section");
 const dripForm = document.getElementById("drip-ef-117453377");
 const dripButton = document.getElementById("drip-button");
+const buyButton = document.getElementById("buyButton");
+const addButton = document.getElementById("add");
+const quantityInput = document.getElementById("quantity-input");
 
-
-function showBuySection() {
-    if (window.location.href === "https://begotten.live/reservation") {
-        buySection.style.visibility = "hidden";
-        dripForm.style.display = "block";
-    }else {
-        buySection.style.visibility = "visible";
-        //change below back to none before committing GIT
-        dripForm.style.display = "none"; 
-    }
+function handleForm(e) {
+    e.preventDefault();
 }
 
-showBuySection()
+function showBuySection() {
+    buySection.classList.remove("disabled-section");
+    buyButton.disabled = false;
+    addButton.disabled = false;
+    quantityInput.disabled = false;
+}
+
+dripForm.addEventListener('submit', handleForm);
+dripButton.addEventListener('click', showBuySection);
