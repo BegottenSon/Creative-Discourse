@@ -75,16 +75,16 @@ function buttonState() {
     if (countDownSection.textContent === "") {
       checker = setTimeout(check, 1000);
     } else if (countDownSection.textContent === "MISSED THE EVENT") {
-      createButton.style.visibility = "hidden";
+      createButton.style.display = "none";
     } else {
-      createButton.style.visibility = "visible";
+      createButton.style.display = "block";
     }
   }, 100);
 };
 
 window.addEventListener('load', buttonState);
 
-//DISPLAY RESERVATIONS LEFT
+//DISPLAY RESERVATIONS LEFT - reservationCounter varible found in payment.js
 let spotsLeft = document.getElementById("counter");
 function spotsState() {
   let spotUpdate = setTimeout(function update() {
@@ -92,10 +92,10 @@ function spotsState() {
       spotUpdate = setTimeout(update, 1000);
     }else if (reservationCounter <= 0){
       reservationCounter = 0;
-      spotsLeft.textContent = reservationCounter;
-    }else{
-      spotsLeft.textContent = reservationCounter;
+    }else if (countDownSection.textContent === "MISSED THE EVENT") {
+      reservationCounter = 0;
     }
+    spotsLeft.textContent = reservationCounter
   }, 1000);
 }
 

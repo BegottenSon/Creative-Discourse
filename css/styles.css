@@ -80,6 +80,12 @@ NAV BAR STYLING
     grid-template-rows: max-content 2fr 1fr 1fr 1fr 1fr;
 }
 
+/* .videos {
+    grid-row: 4;
+    grid-column: 1/7;
+    width: 80vw;
+} */
+
 #svgIcon {
     grid-row: 1;
     grid-column: 1;
@@ -283,6 +289,10 @@ media queary at 800px
         justify-items: center;
         place-items: center;
     }
+
+    /* .videos {
+        width: 80vw;
+    } */
 
     #title, #piano, #tagline {
         width: 70vw;
